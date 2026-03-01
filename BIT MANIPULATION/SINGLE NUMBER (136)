@@ -1,0 +1,15 @@
+class Solution {
+public:
+    int singleNumber(vector<int>& nums) {
+        //method-easy
+        //the bit manipulation technique of using XOR
+        //XOR will be qual to 0 if numbers are same and 0 XOR nay number is    number itself
+
+        int n =nums.size();
+        int res=0;
+        for(int i=0;i<n;i++){
+            res=nums[i]^res;    
+            }
+            return res;
+    }
+};

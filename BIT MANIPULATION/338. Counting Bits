@@ -1,0 +1,26 @@
+class Solution {
+public:
+    int set_bitss(int x){
+
+        int count=0;
+    
+        while(x){
+           if((x & 1) == 1){
+                count++;
+            }
+            x=x>>1;
+        }
+
+    return count;
+    }
+    vector<int> countBits(int n) {
+        vector<int> res(n+1);
+    for(int i=0;i<=n;i++){
+        res[i]=set_bitss(i);
+
+
+    }
+    return res;
+
+    }
+};

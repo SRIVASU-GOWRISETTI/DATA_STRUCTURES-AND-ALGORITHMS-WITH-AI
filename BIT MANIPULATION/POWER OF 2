@@ -1,0 +1,12 @@
+//WE HERE ARE TO BE AWARE OF 2 THINGS 1 POWER OF 2 MEANS ONLY 1 SET BIT WILL BE THERE IN BNARY FORMAT
+// EXXAMPLE 2-->10,4-->100,8-->100,16-->1000
+// WE USE BK ALGO TO find out wheter atleast one bit is set or not so we will and n and n-1 if it is set we will get 0 orelse return false since its not power of 2
+class Solution {
+public:
+    bool isPowerOfTwo(int n) {
+        if(n<=0){
+            return false;
+        }  
+      return (n & (n-1))==0;
+    }
+};

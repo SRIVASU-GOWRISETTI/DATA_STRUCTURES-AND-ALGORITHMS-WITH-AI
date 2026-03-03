@@ -1,0 +1,27 @@
+class Solution {
+public:
+/*but duplicates removal only needs ONE pointer.
+
+Since list is sorted:
+
+1 -> 1 -> 2 -> 3 -> 3
+
+If current == next → skip next.
+
+No need for 2 pointers.*/
+    ListNode* deleteDuplicates(ListNode* head) {
+        ListNode* current = head;
+        if (head == nullptr) return head;
+        while(current != nullptr && current->next != nullptr){
+
+        if (current->val == current->next->val) {
+            current->next = current->next->next;  // skip duplicate
+        } 
+        else {
+            current = current->next;  // move forward
+        }
+        
+        }
+        return head;
+    }
+};

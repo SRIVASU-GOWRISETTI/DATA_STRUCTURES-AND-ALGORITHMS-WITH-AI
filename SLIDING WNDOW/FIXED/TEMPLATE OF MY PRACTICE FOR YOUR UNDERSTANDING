@@ -1,0 +1,37 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+
+
+
+int fixedWindow(vector<int>&arr,int k){
+
+int n=arr.size();
+int window_val=0;
+
+for(int i=0;i<k;i++){
+
+window_val+=arr[i];
+}
+
+int result=window_val;
+
+for(int right=k;right<n;right++){
+
+
+    window_val=window_val+arr[right];
+    window_val=window_val-arr[right-k];
+    result=max(result,window_val);
+
+
+}
+return result;
+
+}
+
+int main(){
+vector<int>arr={1,2,3,4,5,6,7,8,9};
+int k=3;
+cout<<fixedWindow(arr,k)<<endl;
+return 0;
+}
